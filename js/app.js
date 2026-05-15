@@ -97,7 +97,7 @@ function renderRentables() {
                                 ${p.thumbnail ? `<img src="${p.thumbnail}" alt="${p.name}" style="height:120px; object-fit:contain; border-radius:8px;">` : `<div class="prod-img-placeholder"><i class="ri-image-line"></i></div>`}
                                 <div>
                                     <h4 style="font-size: 0.95rem;">${p.name}</h4>
-                                    <span style="font-size: 0.8rem; color: var(--text-secondary)">${p.size_format}</span>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary)">${p.unit_size} ${p.size_format}</span>
                                 </div>
                                 <div style="margin-top: auto;">
                                     <div class="price">${p.current_price.toFixed(2)} €</div>
@@ -165,8 +165,8 @@ function renderProductsTable() {
                     <span style="font-weight:500;">${p.name}</span>
                 </div>
             </td>
-            <td><span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">${p.category}</span></td>
-            <td>${p.size_format}</td>
+            <td><span style="background: rgba(0,0,0,0.05); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">${p.category}</span></td>
+            <td>${p.unit_size} ${p.size_format}</td>
             <td style="font-weight:600; color:var(--accent-primary)">${p.current_price.toFixed(2)} €</td>
             <td style="color:var(--text-secondary)">${p.bulk_price ? p.bulk_price.toFixed(2) : '-'} €</td>
             <td>
