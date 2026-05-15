@@ -1,15 +1,15 @@
 :root {
-    /* Paleta de colores - Premium Dark Mode con acentos de Mercadona */
-    --bg-color: #0f172a; /* Slate oscuro */
-    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-primary: #10b981; /* Verde esmeralda tipo Mercadona */
-    --accent-hover: #059669;
-    --card-hover: rgba(255, 255, 255, 0.08);
+    /* Paleta de colores - Premium Light Mode con acentos de Mercadona */
+    --bg-color: #f1f5f9; /* Slate claro */
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-primary: #059669; /* Verde Mercadona ligeramente más oscuro para contraste */
+    --accent-hover: #047857;
+    --card-hover: rgba(255, 255, 255, 0.9);
     --transition: all 0.3s ease;
 }
 
@@ -225,7 +225,7 @@ h1, h2, h3 {
 .search-bar input {
     width: 100%;
     padding: 12px 16px 12px 40px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.5);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     color: var(--text-primary);
@@ -236,7 +236,8 @@ h1, h2, h3 {
 
 .search-bar input:focus {
     border-color: var(--accent-primary);
-    background: rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 /* Grid de Productos Rentables */
@@ -246,8 +247,32 @@ h1, h2, h3 {
     gap: 20px;
 }
 
+.category-rentables-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) transparent;
+}
+
+.category-rentables-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.category-rentables-row::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    border-radius: 4px;
+}
+
+.category-rentables-row .product-card {
+    min-width: 220px;
+    max-width: 220px;
+    flex: 0 0 auto;
+}
+
 .product-card {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     padding: 16px;
@@ -264,7 +289,7 @@ h1, h2, h3 {
 
 .prod-img-placeholder {
     height: 120px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -322,7 +347,7 @@ h1, h2, h3 {
 }
 
 .products-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .btn-chart {
@@ -352,17 +377,23 @@ h1, h2, h3 {
 }
 
 .page-btn {
-    background: rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.5);
     border: 1px solid var(--glass-border);
     color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 8px;
     cursor: pointer;
+    transition: var(--transition);
+}
+
+.page-btn:hover {
+    background: var(--card-hover);
 }
 
 .page-btn.active {
     background: var(--accent-primary);
     border-color: var(--accent-primary);
+    color: white;
 }
 
 /* Modal */
